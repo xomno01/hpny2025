@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Năm Mới 2025</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #000428, #004e92);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: firework 1s infinite;
+        }
+
+        @keyframes firework {
+            0% { 
+                transform: scale(1);
+                opacity: 1;
+            }
+            70% { 
+                transform: scale(50);
+                opacity: 0.7;
+            }
+            100% { 
+                transform: scale(50);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.7);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6; }
+        }
+
+        .year {
+            font-size: 6em;
+            color: #fff700;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+
+        .wishes {
+            font-size: 1.5em;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc Mừng</h1>
+        <div class="year">2025</div>
+        <div class="wishes">
+            Năm mới An Khang Thịnh Vượng! <br>
+            Chúc bạn và gia đình luôn hạnh phúc, may mắn và thành công!
+        </div>
+    </div>
+
+    <script>
+        // Mảng các màu pháo hoa
+        const fireworkColors = [
+            '#ff4da6',    // Hồng
+            '#ff6b6b',    // Đỏ hồng
+            '#feca57',    // Vàng
+            '#ff9ff3',    // Tím hồng
+            '#54a0ff',    // Xanh dương
+            '#5f27cd'     // Tím đậm
+        ];
+
+        function createFireworks() {
+            for(let i = 0; i < 150; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                
+                // Chọn màu ngẫu nhiên
+                firework.style.backgroundColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+                
+                firework.style.left = `${Math.random() * 100}%`;
+                firework.style.top = `${Math.random() * 100}%`;
+                firework.style.animationDelay = `${Math.random() * 2}s`;
+                
+                // Thay đổi kích thước
+                const size = 2 + Math.random() * 5;
+                firework.style.width = `${size}px`;
+                firework.style.height = `${size}px`;
+                
+                document.body.appendChild(firework);
+            }
+        }
+        createFireworks();
+    </script>
+</body>
+</html>
